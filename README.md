@@ -24,3 +24,5 @@ Se detectaron dos zonas críticas:
 - La segunda zona crítica es al cargar los resultados al vector. Al tener un proceso de redimensionamiento interno, se protegió este proceso para que no tuviera problemas de índices.
 
 Se utilizó al mutex implementado dentro de un Lock para volverlo RAII, y se utilizaron dos mutex en total, uno para cada zona crítica.
+
+![Diagrama de secuencia](https://github.com/WagnerMarcos/Verificador-eBPF/blob/master/tp2.png?raw=true)

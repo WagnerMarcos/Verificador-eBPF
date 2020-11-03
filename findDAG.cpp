@@ -8,7 +8,7 @@ void FindDAG::run() {
     std::string fileName;
     std::string result;
 
-    while(thereIsFile){
+    while (thereIsFile){
         result = "";
         fileName = fileHandler.getFile();
         if (fileName.length()>0){

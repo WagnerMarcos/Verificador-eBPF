@@ -98,8 +98,9 @@ bool Node::already_visited(){
     if (visited == false){
         visited = true;
         return false;
-    } else 
+    } else {
         return true;
+    }
 }
 void Node::unvisit(){
     visited = false;

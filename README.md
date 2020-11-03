@@ -25,4 +25,7 @@ Se detectaron dos zonas críticas:
 
 Se utilizó al mutex implementado dentro de un Lock para volverlo RAII, y se utilizaron dos mutex en total, uno para cada zona crítica.
 
+
+### Diagrama de secuencias para un hilo
+
 ![Diagrama de secuencia](https://github.com/WagnerMarcos/Verificador-eBPF/blob/master/tp2.png?raw=true)

@@ -14,12 +14,11 @@ class FindDAG : public Thread{
 public:
     FindDAG(FileHandler& fh, ResultProtected& r);
     virtual void run() override;
-    void setGraphFromFile(std::string fileName, std::string& result);
+    void setGraphFromFile(std::string fileName, Graph& g);
     void operator()();
 private:
     FileHandler& fileHandler;
     ResultProtected& results;
-    Graph g;
     bool thereIsFile = true;
 };
 

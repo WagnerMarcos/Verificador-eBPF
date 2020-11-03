@@ -12,7 +12,9 @@ void FindDAG::run() {
         result = "";
         fileName = fileHandler.getFile();
         if (fileName.length()>0){
-            setGraphFromFile(fileName, result);
+            Graph g;
+            setGraphFromFile(fileName, g);
+            g.DFS(result);
             results.ingresarResult(result);
         } else {
             thereIsFile = false;
@@ -23,9 +25,8 @@ void FindDAG::operator()(){
     this->run();
 }
  
-void FindDAG::setGraphFromFile(std::string fileName, std::string& result){
+void FindDAG::setGraphFromFile(std::string fileName, Graph& g){
     std::string line;
-    Graph g;
     g.addName(fileName);
     std::string word;
     std::ifstream f;
@@ -65,5 +66,4 @@ void FindDAG::setGraphFromFile(std::string fileName, std::string& result){
             node.set_as_conditional_jump();
         g.addNode(node);
     }
-    g.DFS(result);
 }

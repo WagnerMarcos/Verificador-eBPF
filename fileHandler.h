@@ -7,9 +7,6 @@
 #include <string>
 #include <mutex>
 #include "lock.h"
-// #include "file.h"
-
-// using namespace std;
 
 class FileHandler {
 private:
@@ -21,7 +18,6 @@ public:
     void handleFile(const char *fileName);
     bool hasFile();
     std::string getFile();
-
 };
 
 #endif

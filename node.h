@@ -1,23 +1,18 @@
 #ifndef NODE__T
 #define NODE__T
 
-// #include <iostream>
 #include <list>
 #include <string>
 #include <iostream>
-// using namespace std;
 class Node{
 public:
     Node();
     ~Node();
     Node(const Node& node);
-    // Node& operator=(const Node &node);
-    // Node(Node node);
     std::string getTag();
     void set_tag(std::string tag);
     void set_instr(std::string str);
     void add_jmp_dest(std::string dest);
-    // void set_as_jmp();
     void printTag();
     void print();
     void set_as_return();
@@ -35,6 +30,7 @@ public:
     void use();
     bool was_used();
     void reset();
+
 private:
     std::string tag;
     std::string instr;

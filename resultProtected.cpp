@@ -9,6 +9,6 @@ void ResultProtected::ingresarResult(std::string result){
 }
 void ResultProtected::printResults(){
     std::sort(results.begin(),results.end());//,sorting);
-    for(auto& str : results)
+    for (auto& str : results)
         std::cout << str << std::endl;        
 }

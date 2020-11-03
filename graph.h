@@ -12,9 +12,7 @@ public:
     ~Graph();
 
     void addNode(Node& n);
-    void findTag(std::string str);
     void addName(std::string name);
-    void print();
     void DFS(std::string& result);
     void findTag(std::string tag, std::vector<Node>::iterator& ptr);
     void iterate(std::vector<Node>::iterator);
@@ -26,6 +24,5 @@ private:
     std::vector<Node> v;
     std::string name;
     bool there_is_loop = false;
-    const std::string dict[10]= {"jmp", "ja", "jeq", "jneq", "jne", "jlt", "jle", "jgt", "jge", "jset"};
 };
 #endif

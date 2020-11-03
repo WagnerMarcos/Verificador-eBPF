@@ -1,5 +1,4 @@
 #include "fileHandler.h"
-using namespace :: std;
 
 FileHandler::FileHandler(){}
 FileHandler::~FileHandler(){}
@@ -14,9 +13,9 @@ bool FileHandler::hasFile(){
 
 std::string FileHandler::getFile(){
     Lock l(m);
-    if(hasFile()){
-        std::string f = q.front(); // devuelve una referencia al próximo elemento
-        q.pop(); // quito el próximo elemento de la queue
+    if (hasFile()){
+        std::string f = q.front(); // referencia al próximo elemento
+        q.pop(); // quito el siguiente elemento de la queue
         return f;
     }
     return "";

@@ -1,5 +1,4 @@
 #include "node.h"
-using namespace :: std;
 Node::Node(){
     is_jmp = false; 
     is_used = false;
@@ -17,15 +16,13 @@ Node::Node(const Node& node){
     jumped = false;
     has_conditional_jump = false;
     
-    if(node.instr.length()>0)
+    if (node.instr.length()>0)
         this->instr = node.instr;
-    if(node.tag.length()>0)
+    if (node.tag.length()>0)
         this->tag = node.tag;
-    if(node.first_dest.length()>0)
+    if (node.first_dest.length()>0)
         this->first_dest = node.first_dest;
-    // std::cout << "Tiene 1dest: " << node.first_dest << std::endl;
-    // std::cout << "Tiene 2dest: " << node.second_dest << std::endl;
-    if(node.second_dest.length()>0)
+    if (node.second_dest.length()>0)
         this->second_dest = node.second_dest;
     this->is_jmp = node.is_jmp;
     this->is_used = node.is_used;
@@ -33,27 +30,7 @@ Node::Node(const Node& node){
     this->visited = node.visited;
     this->jumped = node.jumped;
     this->has_conditional_jump = node.has_conditional_jump;
-}/*
-Node& Node::operator=(const Node &node){
-    if(this == &node)
-        return *this;
-    // visited = false; 
-    // is_jmp=false; 
-    // is_used=false;
-    std::cout << "copio tag" << std::endl;
-    if(node.tag.length()>0)
-        this->tag = node.tag;
-    
-    std::cout << "copio first" << std::endl;
-    if(node.first_dest.length()>0)
-        this->add_jmp_dest(node.first_dest);
-    std::cout << "copio sec" << std::endl;
-    if(node.second_dest.length()>0)
-        this->add_jmp_dest(node.second_dest);
-    
-    std::cout << "salgo" << std::endl;
-    return *this;
-}*/
+}
 void Node::reset(){
     is_jmp = false; 
     is_used = false;
@@ -67,7 +44,7 @@ void Node::reset(){
     second_dest = "";
 }
 void Node::set_instr(std::string str){
-    if(str.length() > 0)
+    if (str.length() > 0)
         instr = str;
 }
 void Node::print_instr(){
@@ -78,22 +55,19 @@ std::string Node::getTag(){
 }
 void Node::set_tag(std::string new_tag){
     this->tag = new_tag;
-    if(!this->tag.empty())
+    if (!this->tag.empty())
         this->tag.pop_back();
 }
 void Node::add_jmp_dest(std::string new_dest){
-    if(is_jmp == false)
+    if (is_jmp == false)
         is_jmp = true;
-    if(first_dest.length() == 0)
+    if (first_dest.length() == 0){
         first_dest = new_dest;
-    else{
+    } else {
         second_dest = new_dest;
         first_dest.pop_back();
     }
 }
-// void Node::set_as_jmp(){
-//     is_jmp = true;
-// }
 void Node::print(){
     std::cout << "Imprimiendo todo el nodo: " << std::endl;
 
@@ -121,11 +95,10 @@ void Node::set_as_return(){
     is_ret = true;
 }
 bool Node::already_visited(){
-    if(visited == false){
+    if (visited == false){
         visited = true;
         return false;
-    }
-    else 
+    } else 
         return true;
 }
 void Node::unvisit(){

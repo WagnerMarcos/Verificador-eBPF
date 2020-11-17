@@ -8,7 +8,7 @@ void ResultProtected::ingresarResult(std::string result){
     results.push_back(result);
 }
 void ResultProtected::printResults(){
-    std::sort(results.begin(),results.end());//,sorting);
+    std::sort(results.begin(),results.end());
     for (auto& str : results)
         std::cout << str << std::endl;        
 }

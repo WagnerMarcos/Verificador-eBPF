@@ -17,7 +17,6 @@ int main(int argc, char *argv[]){
         i++;
     }
     std::vector<Thread*> threads;
-    std::cout << " Aca " << std::endl;
 
     for (i = 0; i < n_threads; ++i){
         Thread *t = new FindDAG(fh, results);
@@ -25,10 +24,8 @@ int main(int argc, char *argv[]){
 
         threads.push_back(t);
     }
-    std::cout << " Aca2 " << std::endl;
     for (i = 0; i < n_threads; ++i){
         threads[i]->join();
-    std::cout << " Aca3 " << std::endl;
         delete threads[i];
     }
     results.printResults();

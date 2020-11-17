@@ -52,7 +52,7 @@ bool Graph::has_loop(){
 }
 void Graph::iterate(std::vector<Node>::iterator ptr){
     int i = 0;
-    for (; ptr < v.end(); ptr++,i++){
+    for (; ptr < v.end(); ++ptr,i++){
         visit(ptr);
         ptr->use();
         if (ptr->has_jmp() && !(ptr->already_jumped())){

@@ -12,9 +12,9 @@ public:
     ~Graph();
 
     void addNode(Node& n);
-    void addName(std::string name);
+    void addName(const std::string& name);
     void DFS(std::string& result);
-    void findTag(std::string tag, std::vector<Node>::iterator& ptr);
+    void findTag(const std::string& tag, std::vector<Node>::iterator& ptr);
     void iterate(std::vector<Node>::iterator);
     void visit(std::vector<Node>::iterator& ptr);
     void unvisit(std::vector<Node>::iterator& ptr);

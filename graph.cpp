@@ -15,7 +15,7 @@ void Graph::visit(std::vector<Node>::iterator& ptr){
 void Graph::unvisit(std::vector<Node>::iterator& ptr){
     ptr->unvisit();
 }
-void Graph::findTag(std::string tag, std::vector<Node>::iterator& ptr){
+void Graph::findTag(const std::string& tag, std::vector<Node>::iterator& ptr){
     ptr = v.begin();
     for (auto& node : v){
         if (tag == node.getTag()){
@@ -78,6 +78,6 @@ void Graph::iterate(std::vector<Node>::iterator ptr){
     }
 }
 
-void Graph::addName(std::string str){
+void Graph::addName(const std::string& str){
     name = str;
 }

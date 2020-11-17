@@ -31,34 +31,19 @@ Node::Node(const Node& node){
     this->jumped = node.jumped;
     this->has_conditional_jump = node.has_conditional_jump;
 }
-void Node::reset(){
-    is_jmp = false; 
-    is_used = false;
-    is_ret = false;
-    visited = false; 
-    has_conditional_jump = false;
-    jumped = false;
-    tag = "";
-    instr = "";
-    first_dest = "";
-    second_dest = "";
-}
 void Node::set_instr(std::string str){
     if (str.length() > 0)
         instr = str;
 }
-void Node::print_instr(){
-    std::cout << "Instruccion: " << instr << std::endl;
-}
 std::string Node::getTag(){
     return tag;
 }
-void Node::set_tag(std::string new_tag){
+void Node::set_tag(const std::string& new_tag){
     this->tag = new_tag;
     if (!this->tag.empty())
         this->tag.pop_back();
 }
-void Node::add_jmp_dest(std::string new_dest){
+void Node::add_jmp_dest(const std::string& new_dest){
     if (is_jmp == false)
         is_jmp = true;
     if (first_dest.length() == 0){
@@ -67,17 +52,6 @@ void Node::add_jmp_dest(std::string new_dest){
         second_dest = new_dest;
         first_dest.pop_back();
     }
-}
-void Node::print(){
-    std::cout << "Imprimiendo todo el nodo: " << std::endl;
-
-    std::list<std::string>::iterator it;
-    std::cout << "tag:" << tag << "~" << std::endl;
-    std::cout << "is return: " << is_ret << std::endl;
-    std::cout << "is jmp: " << is_jmp << std::endl;
-    std::cout << "first_dest: " << first_dest << std::endl;
-    std::cout << "second_dest: " << second_dest << std::endl;
-    std::cout << "has_conditional_jump: " << has_conditional_jump << std::endl;
 }
 void Node::use(){
     is_used = true;

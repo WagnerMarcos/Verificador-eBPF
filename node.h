@@ -10,11 +10,10 @@ public:
     ~Node();
     Node(const Node& node);
     std::string getTag();
-    void set_tag(std::string tag);
+    void set_tag(const std::string& tag);
     void set_instr(std::string str);
-    void add_jmp_dest(std::string dest);
+    void add_jmp_dest(const std::string& dest);
     void printTag();
-    void print();
     void set_as_return();
     bool is_return();
     bool has_jmp();
@@ -25,11 +24,9 @@ public:
     bool is_conditional_jump();
     bool already_jumped();
     void is_jumping();
-    void print_instr();
     void unvisit();
     void use();
     bool was_used();
-    void reset();
 
 private:
     std::string tag;
